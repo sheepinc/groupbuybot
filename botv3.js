@@ -193,7 +193,7 @@ bot.command('download', async ctx => {
             inline_keyboard:
                 [
                     [
-                        { text: 'Get files', url: url + "getfiles_" + ctx.chat.id+(topic?"__"+topic:'') }
+                        { text: 'Get files', url: url + "getfiles_" + ctx.groupbuy.id }
                     ]
                 ]
 
@@ -207,7 +207,7 @@ bot.command(["start", "help"], async(ctx) => {
         let params = ctx.message.text.replace("/start ", "")
         if (params.includes("getfiles_")) {
             let chatid = params.replace("getfiles_", '').replace('__',":")
-            let group= await Groupbuy.find({groupid:chatid});
+            let group= await Groupbuy.find({id:chatid});
             let buyer = await userConnection.find({groupid:group.id+"",userid:ctx.from.id+""})
             // let temp = ctx.sessionDB.get(`sessions`).getById(chatid).value();
             let found = false;
