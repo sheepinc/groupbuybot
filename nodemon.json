@@ -1,0 +1,19 @@
+{
+    "restartable": "rs",
+    "ignore": [
+      ".json",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": true,
+    "execMap": {
+      "js": "node"
+    },
+    "watch": [
+      "botv3.js",
+      "dbactions.js"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js"
+  }
